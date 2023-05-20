@@ -13,7 +13,7 @@ import { allowInsecurePrototypeAccess } from "@handlebars/allow-prototype-access
 
 const app = express();
 const PORT = process.env.PORT || 8080;
-const connection = mongoose.connect("mongodb://localhost:27017/adoptme");
+const connection = mongoose.connect(process.env.MONGO_URI);
 
 app.use(express.json());
 app.use(cookieParser());
